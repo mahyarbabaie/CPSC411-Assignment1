@@ -1,4 +1,4 @@
-/
+//
 //  Person.h
 //  Assignment1
 //
@@ -11,20 +11,15 @@
 
 @interface Person : NSObject
 {
-    @protected char * strFirstName;     // default visibility is 'protected'
-    @protected char * strLastName;
-    @protected int iCWID;
-    
-}
 
--(id) init;             // Default constructor need to be explictly declared 
--(void) setFirstName: (char *) strName;
--(void) setLastName: (char *) strName;
--(void) setCWID: (int) iNumber;
+    NSString *strFirstName;
+    NSString *strLastName;
+    NSInteger iCWID;
+}
+//Constructor
+-(id) initWithFirst:(NSString *)name1 andLast:(NSString *)name2 andCWID:(NSInteger)num1;
 -(void) print;
 
--(void) dealloc;        // Override this method because of dynamically allocated memory
 
 @end
-
-#endif 
+#endif /* Person_h */

@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        
+#import "Person.h"
+
+int main(int argc, const char * argv[])
+{
+    @autoreleasepool
+    {
         char fName[100];
         char lName[100];
-        int CWID = 0;
-     
+        NSInteger CWID = 0;
+        
         NSLog(@"Enter your First Name: ");
         scanf("%s", fName);
         NSString *FirstName = [NSString stringWithFormat:@"%s", fName];
@@ -23,16 +26,14 @@ int main(int argc, const char * argv[]) {
         scanf("%s", lName);
         NSString *LastName = [NSString stringWithFormat:@"%s", lName];
         
-        NSLog(@"Enter your CWID");
-        scanf("%d", &CWID);
+        NSLog(@"Enter your CWID:");
+        scanf("%ld", &CWID);
+        
+        Person *person = [[Person alloc]initWithFirst:FirstName andLast:LastName andCWID:CWID];
+        [person print];
         
         
-        // prints First Name
-        NSLog(@"%@",FirstName);
-        // prints Last Name
-        NSLog(@"%@",LastName);
-        // prints CWID
-        NSLog(@"%d", CWID);
+        
     }
     return 0;
 }

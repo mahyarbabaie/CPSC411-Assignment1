@@ -6,48 +6,28 @@
 //  Copyright © 2016 Mahyar Babaie. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
 #import "Person.h"
 
 @implementation Person
 
--(id) init
+-(id) initWithFirst:(NSString *)name1 andLast:(NSString *)name2 andCWID:(NSInteger)num1
 {
-	self = [super init];
-	return self;
-}
-
--(void) setFirstName: (char *) sName
-{
-	strFirstName = sName;
-}
-
--(void) setLastName: (char *) sName
-{
-	strLastName = sName;
-}
-
--(void) setCWID: (int) iNo
-{
-	iCWID = iNo;
+    strFirstName = name1;
+    strLastName = name2;
+    iCWID = num1;
+    return self;
 }
 
 -(void) print
 {
-	strDesc = malloc(200 * sizeof(char));
-	sprintf(strDesc, "First Name: %s Last Name: %s CWID: %d", strFirstName, strLastName, iCWID);
-	return strDesc;
+    NSLog(@"First Name: %@", strFirstName);
+    NSLog(@"Last Name: %@", strLastName);
+    NSLog(@"CWID: %ld", iCWID);
 }
 
--(void) dealloc
-{
-	NSLog(@"Deallocation has begun");
-	
-	free(strDesc);
-	strDesc = nil;
-	
-	NSLog(@"Finished Deallocating")
-}
+
 
 @end
