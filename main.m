@@ -16,7 +16,11 @@ int main(int argc, const char * argv[])
     {
         char fName[100];
         char lName[100];
-        NSInteger CWID = 0;
+        long courseList[10];
+        long hwList[10];
+        long midtermList[10];
+        long finalList[10];
+        NSInteger hwScore, midtermScore, finalScore, courseLimit, courseNumber, CWID;
         
         NSLog(@"Enter your First Name: ");
         scanf("%s", fName);
@@ -28,6 +32,28 @@ int main(int argc, const char * argv[])
         
         NSLog(@"Enter your CWID:");
         scanf("%ld", &CWID);
+        
+        NSLog(@"How many courses did you take?");
+        scanf("%ld", &courseLimit);
+        
+        for (int i = 0; i < courseLimit; i++)
+        {
+            NSLog(@"Enter your Course ID");
+            scanf("%ld", &courseNumber);
+            courseList[i] = courseNumber;
+            
+            NSLog(@"Enter your Avg HW Score");
+            scanf("%ld", &hwScore);
+            hwList[i] = hwScore;
+            
+            NSLog(@"Enter your MidTerm Score");
+            scanf("%ld", &midtermScore);
+            midtermList[i] = midtermScore;
+            
+            NSLog(@"Enter your Final Score");
+            scanf("%ld", &finalScore);
+            finalList[i] = finalScore;
+        }
         
         Person *person = [[Person alloc]initWithFirst:FirstName andLast:LastName andCWID:CWID];
         [person print];
