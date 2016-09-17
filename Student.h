@@ -9,14 +9,20 @@
 #ifndef Student_h
 #define Student_h
 
+#import "Person.h"
+
 @interface Student : Person
 {
-    NSArray *stock;
-    
+    long courseIDArray[10];
+    long hwArray[10];
+    long midtermArray[10];
+    long finalArray[10];
 }
 
 
-
+-(id) initWithFirst:(NSString *)name1 andLast:(NSString *)name2 andCWID:(NSInteger)num1;
+-(void) CourseID:(long [])array1 andHW:(long [])array2 andMidTerm:(long [])array3 andFinal:(long[])array4;
+-(void) print;
 
 
 
