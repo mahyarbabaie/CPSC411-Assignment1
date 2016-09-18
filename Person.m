@@ -13,6 +13,7 @@
 
 @implementation Person
 
+// assiging the argument variables of name1, name2, and num1 to the variables inside class Person
 -(id) initWithFirst:(NSString *)name1 andLast:(NSString *)name2 andCWID:(NSInteger)num1
 {
     strFirstName = name1;
@@ -21,6 +22,7 @@
     return self;
 }
 
+// this was a test function to make sure the program was taking in the input above
 -(void) print
 {
     NSLog(@"First Name: %@", strFirstName);

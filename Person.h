@@ -11,13 +11,14 @@
 
 @interface Person : NSObject
 {
-
+// List of Variables that will set values to first name, last name, and their CWID
     NSString *strFirstName;
     NSString *strLastName;
     NSInteger iCWID;
 }
-//Constructor
+// Constructor
 -(id) initWithFirst:(NSString *)name1 andLast:(NSString *)name2 andCWID:(NSInteger)num1;
+// prints out a message
 -(void) print;
 
 

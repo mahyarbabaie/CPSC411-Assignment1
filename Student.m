@@ -12,13 +12,15 @@
 
 @implementation Student
 {
+    // the scorelist takes in the values once the grade is calculated
     double scoreList[10];
+    // these are NSObjects that are used to make the dictionary
     NSMutableArray *courseIDs;
     NSMutableArray *courseGrades;
     NSMutableDictionary *CourseGradeDict;
     
 }
-
+// Constructor that initializes the class variables into the argument variables
 -(id) initWithFirst:(NSString *)name1 andLast:(NSString *)name2 andCWID:(NSInteger)num1
 {
     strFirstName = name1;
@@ -26,7 +28,7 @@
     iCWID = num1;
     return self;
 }
-
+// Calculates the Grade for each class and stores it into an array called scoreList
 -(void) CalcHW:(long [])array1 andMidTerm:(long [])array2 andFinal:(long[])array3 andLimit:(NSInteger)num1
 {
     double hw = 0;
@@ -43,7 +45,7 @@
         scoreList[i] = (hw + mid + final);
     }
 }
-
+// This makes a Dictionary that contains the Course ID and Course Grade
 -(void) DictionaryMaker:(long[])array1 andLimit:(NSInteger)num1
 {
     NSString *strCID = nil;
@@ -60,9 +62,8 @@
     }
     
    
-    
-    
 }
+// Prints Student's First Name, Last Name, CWID, and the Course ID with the corresponding grade
 -(void) print
 {
     NSLog(@"FirstName: %@ LastName: %@ CWID: %ld", strFirstName, strLastName, iCWID);
