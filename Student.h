@@ -21,7 +21,11 @@
 
 
 -(id) initWithFirst:(NSString *)name1 andLast:(NSString *)name2 andCWID:(NSInteger)num1;
--(void) CourseID:(long [])array1 andHW:(long [])array2 andMidTerm:(long [])array3 andFinal:(long[])array4;
+
+-(void) CalcHW:(long [])array1 andMidTerm:(long [])array2 andFinal:(long[])array3 andLimit:(NSInteger)num1;
+
+-(void) DictionaryMaker:(long[])array1 andLimit:(NSInteger)num1;
+
 -(void) print;
 
 

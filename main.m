@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Person.h"
+#import "Student.h"
 
 int main(int argc, const char * argv[])
 {
@@ -55,10 +55,10 @@ int main(int argc, const char * argv[])
             finalList[i] = finalScore;
         }
         
-        Person *person = [[Person alloc]initWithFirst:FirstName andLast:LastName andCWID:CWID];
-        [person print];
-        
-        
+        Student *student = [[Student alloc]initWithFirst:FirstName andLast:LastName andCWID:CWID];
+        [student CalcHW:hwList andMidTerm:midtermList andFinal:finalList andLimit:courseLimit];
+        [student DictionaryMaker:courseList andLimit:courseLimit];
+        [student print];
         
     }
     return 0;
