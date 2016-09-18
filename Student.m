@@ -48,12 +48,14 @@
 {
     NSString *strCID = nil;
     NSString *strSLIST = nil;
+    NSString *Score =@"Score: ";
+    NSString *Class =@"Course Number: ";
     CourseGradeDict = [[NSMutableDictionary alloc] init];
     
     for (int i = 0; i < num1; i++)
     {
-        strCID = [NSString stringWithFormat:@"%ld", array1[i]];
-        strSLIST = [NSString stringWithFormat:@"%lf", scoreList[i]];
+        strCID = [NSString stringWithFormat:@"%@%ld", Class, array1[i]];
+        strSLIST = [NSString stringWithFormat:@"%@%lf", Score, scoreList[i]];
         [CourseGradeDict setObject:strCID forKey:strSLIST];
     }
     
@@ -63,7 +65,7 @@
 }
 -(void) print
 {
-    NSLog(@"First Name: %@ Last Name: %@ CWID: %ld", strFirstName, strLastName, iCWID);
+    NSLog(@"FirstName: %@ LastName: %@ CWID: %ld", strFirstName, strLastName, iCWID);
     NSLog(@"%@", CourseGradeDict);
     
 }
